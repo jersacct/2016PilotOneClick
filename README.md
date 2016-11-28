@@ -10,6 +10,8 @@ This project uses code or utilities from the below authors:
 dirtyCOW exploit: I based a different implementation of the dirtyCOW exploit on the below code:
 https://github.com/timwr/CVE-2016-5195
 
+Many thanks to purespin on XDA for figuring out the signature check mechanism!
+
 In an effort to maintain fewer scripts to use on both Windows and Linux platforms, use of win-bash was used, located here:
 https://sourceforge.net/projects/win-bash/
 
