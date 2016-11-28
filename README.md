@@ -4,7 +4,9 @@
 This project is a collection of utilities & scripts to get root access on a 2016 model Honda Pilot head unit, as well as simplifying installation of third party (non-Honda) apps. 
 
 References:
+
 This project uses code or utilities from the below authors:
+
 dirtyCOW exploit: I based a different implementation of the dirtyCOW exploit on the below code:
 https://github.com/timwr/CVE-2016-5195
 
