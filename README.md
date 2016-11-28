@@ -3,6 +3,10 @@
 
 This project is a collection of utilities & scripts to get root access on a 2016 model Honda Pilot head unit, as well as simplifying installation of third party (non-Honda) apps. 
 
+USE AT YOUR OWN RISK!
+
+These scripts do not implement a lot of error checking. While it does present a user with a final double check of important things before comitting changes, these scripts WILL modify your head unit and have the potential to "brick" it. You have been warned. 
+
 References:
 
 This project uses code or utilities from the below authors:
