@@ -1,8 +1,11 @@
 #!/bin/sh
 
-echo "Usage: ./OneClickInstall.sh ipaddress My.apk"
-echo "Example: ./OneClickInstall.sh 192.168.1.100 Waze.apk"
-
+if [ $# -lt 2 ]
+    then
+        echo "Usage: ./OneClickInstall.sh ipaddress My.apk"
+        echo "Example: ./OneClickInstall.sh 192.168.1.100 Waze.apk"
+        exit 127
+fi
 
 echo "Disconnecting other adb devices\n"
 adb disconnect
