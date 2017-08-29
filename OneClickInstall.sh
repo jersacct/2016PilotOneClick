@@ -141,7 +141,7 @@ echo "Original whitelist.xml size DOES NOT seem okay (bad!)"
 fi
 
 packagecheck=`grep $package whitelist-new.xml`
-if [ ! -z "$package" ]; then
+if [ ! -z "$packagecheck" ]; then
 echo "Package name is present in new whitelist"
 else
 echo "Package name is NOT present in new whitelist (bad!)"
