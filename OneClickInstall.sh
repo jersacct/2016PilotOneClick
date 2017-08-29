@@ -7,6 +7,8 @@ if [ $# -lt 2 ]
         exit 127
 fi
 
+uname=`uname`
+
 echo "Disconnecting other adb devices\n"
 adb disconnect
 sleep 1
@@ -59,12 +61,19 @@ fi
 
 #If we're at this point of the script, we have root & ADB connection established
 echo "Okay, getting signature of $2"
-
-sig=`java -jar bin/GetAndroidSig.jar "$2" | grep "To char" | sed -r 's/^.{9}//'`
+if [ "$uname" = "Darwin" ]; then
+    sig=`java -jar bin/GetAndroidSig.jar "$2" | grep "To char" | sed -E 's/^.{9}//'`
+else
+    sig=`java -jar bin/GetAndroidSig.jar "$2" | grep "To char" | sed -r 's/^.{9}//'`
+fi
 echo "Signature: $sig"
 
 echo "Getting package information"
-package=`aapt dump permissions "$2" | head -1 | sed -r 's/^.{9}//'`
+if [ "$uname" = "Darwin" ]; then
+    package=`aapt dump permissions "$2" | head -1 | sed -E 's/^.{9}//'`
+else
+    package=`aapt dump permissions "$2" | head -1 | sed -r 's/^.{9}//'`
+fi
 echo "Package name: $package"
 echo "Retrieving current whitelist..."
 `adb shell "su -c 'cp /data/system/whitelist.xml /data/local/tmp/'"`
